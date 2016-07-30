@@ -8,7 +8,7 @@ app.use(function(req, res, next) {
 	console.log(req.hostname);
 	console.log(req.url);
 	console.log('http header');
-	console.log('x-forwarded-proto');
+	console.log(req.headers['x-forwarded-proto']);
 
 	if (req.headers['x-forwarded-proto'] === 'http') {
 		next();
